@@ -1,0 +1,1696 @@
+/*--------------------------------------------------------------
+# GENERAL
+--------------------------------------------------------------*/
+body {
+  overflow-y: scroll;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  color: whitesmoke;
+  font-family: "Bebas Neue";
+}
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.oswald {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.24);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(32, 32, 32);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+/*--------------------------------------------------------------
+# NAVIGATION BAR
+--------------------------------------------------------------*/
+.navbar {
+  justify-content: center;
+  width: 100% !important;
+  padding: 10px;
+  position: fixed;
+  visibility: visible;
+  background-color: transparent;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.705);
+  backdrop-filter: blur(7px);
+}
+
+.nav-item {
+  margin: 10px;
+}
+
+.navbar .navbar-nav .nav-link {
+  color: whitesmoke;
+  text-shadow: 1px 1px 5px black;
+  transition: color 0.3s ease;
+  font-size: 22px;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #da1e17;
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item:hover {
+  background-color: whitesmoke;
+  color: #da1e17;
+}
+
+.navbar-nav .nav-item .dropdown-menu .dropdown-item {
+  color: whitesmoke;
+  font-size: 20px;
+}
+
+.navbar-nav .nav-item .dropdown-menu {
+  background-color: rgb(0, 0, 0);
+}
+
+.navbar-nav .nav-item .btn-login {
+  color: #fff;
+  border-radius: 1px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 20px;
+  display: inline-block;
+  border: 1px solid #ffffff;
+  padding: 7px 20px 7px 20px;
+}
+
+.navbar-nav .nav-item .btn-login:hover {
+  border: 1px solid #da1e17;
+  color: #da1e17;
+}
+
+/*--------------------------------------------------------------
+# FOOTER
+--------------------------------------------------------------*/
+#footer {
+  background: #da1e17;
+  padding: 0 0 7px 0;
+  color: #fff;
+  font-size: 17px;
+  font-family: "Bebas Neue";
+}
+
+#footer .row {
+  margin-bottom: 20px;
+}
+
+#footer .footer-top {
+  background-image: url(image/footer-bg.png);
+  border-bottom: 1px solid #222222;
+  padding: 60px 0 30px 0;
+}
+
+#footer .footer-top .footer-info,
+#footer .footer-top .footer-links {
+  margin-bottom: 0px;
+  padding-right: 20px; /* Add some padding to the right */
+  flex: 1; /* Allow columns to take equal space */
+}
+
+#footer .footer-top .footer-info h4,
+#footer .footer-top .footer-links h4 {
+  font-size: 25px;
+  margin: 0 0 0 0;
+  padding: 2px 0 2px 0;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #da1e17;
+}
+
+#footer .footer-top .footer-info p,
+#footer .footer-top .footer-links ul {
+  font-size: 15px;
+  line-height: 24px;
+  margin-bottom: 15px;
+  color: #fff;
+  font-family: "Oswald";
+  font-weight: 300;
+}
+
+#footer .footer-top .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #141414;
+  color: #fff;
+  line-height: 1;
+  padding: 10px 0;
+  margin-right: 4px;
+  border-radius: 4px;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .footer-top .social-links a:hover {
+  background: #da1e17;
+  color: #151515;
+  text-decoration: none;
+}
+
+#footer .footer-top h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #ffffff;
+  font-size: 13px;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  font-family: "Bebas Neue";
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: #fff;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  color: #da1e17;
+  cursor: pointer;
+}
+
+#footer .copyright {
+  font-size: 17px;
+  text-align: center;
+  padding: 7px 0 0px 0;
+  letter-spacing: 1px;
+}
+
+#footer .footer-info .btn-danger {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+#footer .footer-links .nav-item {
+  padding: 0;
+  margin: 0px;
+}
+
+#footer .nav-item .dropdown-menu {
+  background-color: rgb(0, 0, 0);
+}
+
+#footer .footer-top .container .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+#footer .footer-top .container .row > div {
+  border-right: 1px solid #ffffff4d;
+}
+
+#footer .footer-top .container .row > div:last-child {
+  border-right: none;
+}
+
+@media (max-width: 767px) {
+  #footer .footer-top .container .row {
+    flex-direction: column;
+  }
+
+  #footer .footer-top .container .row > div {
+    border-right: none;
+    border-bottom: 1px solid #ffffff4d;
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+
+  #footer .footer-top .container .row > div:last-child {
+    border-bottom: none;
+  }
+}
+
+/*--------------------------------------------------------------
+# BACK TO TOP
+--------------------------------------------------------------*/
+#back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border: #da1e17;
+  box-shadow: 0px 0px 10px #000000;
+  font-size: 15px;
+}
+
+#back-to-top:hover {
+  background-color: #ffffff;
+  color: #da1e17;
+  border: px solid #da1e17;
+  box-shadow: 0px 0px 10px #ffffff;
+}
+
+/*--------------------------------------------------------------
+# (index) HERO SECTION
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  min-height: 100vh;
+  background: url("image/bg.png") top center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+#hero:before {
+  content: "";
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.027) 0%, rgba(0, 0, 0, 0.925) 100%);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero .container {
+  position: relative;
+  padding-top: 74px;
+  text-align: center;
+}
+
+#hero h2 {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 20px 0 10px 0;
+  font-size: 24px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #hero h2 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.btn-danger {
+  margin-top: 20px;
+  color: whitesmoke;
+  background-color: #da1e17;
+  padding: 10px 30px 10px 30px;
+  /* width: auto; */
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+
+.btn-danger:hover {
+  background-color: whitesmoke;
+  color: #da1e17;
+  box-shadow: 0 0 10px #ffffff, 0 0 13px #ffffff;
+}
+
+.btn-success {
+  margin-top: 20px;
+  color: whitesmoke;
+  background-color: #58a822;
+  padding: 10px 30px 10px 30px;
+  /* width: auto; */
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+
+.btn-success:hover {
+  background-color: whitesmoke;
+  color: #58a822;
+  box-shadow: 0 0 10px #ffffff, 0 0 13px #ffffff;
+}
+
+/*--------------------------------------------------------------
+# (index) VISIT US
+--------------------------------------------------------------*/
+.visit-us {
+  width: 100%;
+  height:100%;
+  margin: 120px 0 90px;
+  background: linear-gradient(-45deg, #da1e17, #970429, #f3621e, #da1e17);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  padding: 25px 10px 40px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.visit-us .section-title h2{
+  margin: 0 0 30px 0;
+  font-size: 80px;
+  text-shadow: 0 0 10px #00000071;
+}
+
+.visit-us .info {
+  width: 100%;
+}
+
+.visit-us .info h4 {
+  padding: 0 0 0 70px;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.visit-us .info i {
+  font-size: 20px;
+  background: #141414;
+  color: #ffffff;
+  float: left;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.visit-us .info i:hover {
+  background: #ffffff;
+  color: #da1e17;;
+}
+
+.visit-us .info p {
+  padding: 0 0 0 70px;
+  margin-bottom: 0;
+  font-size: 15px;
+  color: #ffffff;
+  font-family: "Oswald";
+}
+
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# (index) GALLERY CAROUSEL
+--------------------------------------------------------------*/
+.section-title h2 {
+  margin: 80px 0 50px 0;
+  justify-content: center;
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #da1e17, 0 0 13px #da1e17;
+  letter-spacing: 7px;
+}
+
+.bg-black{
+  background-color: #000000;
+}
+
+.carousel-item {
+  min-width: 300px;
+  background: no-repeat center center scroll;
+  background-size: cover;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+}
+
+#prev-icon, #next-icon {
+  color: #da1e17;
+}
+
+#prev-icon:hover,
+#next-icon:hover{
+  color: #ffffff;
+}
+
+/*--------------------------------------------------------------
+# (index) SERVICES
+--------------------------------------------------------------*/
+.services .icon-box {
+  text-align: center;
+  padding: 80px 30px;
+  transition: all ease-in-out 0.3s;
+  background: #141414;
+  border: 2px solid #363636;
+}
+
+.services .icon-box .icon {
+  margin: 0 auto;
+  width: 70px;
+  height: 70px;
+  background: #da1e17;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+.services .icon-box .icon img {
+  width: 35px;
+  transition: ease-in-out 0.3s;
+  filter: invert(1);
+}
+
+.services .icon-box .icon:hover {
+  background-color: whitesmoke;
+}
+
+.services .icon-box .icon img:hover {
+  filter: invert(0);
+}
+
+
+.services .icon-box h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.services .icon-box h4 a {
+  color: #ffffff;
+  transition: ease-in-out 0.3s;
+}
+
+.services .icon-box h4 a:hover {
+  text-shadow: 0 0 10px #da1e17, 0 0 13px #da1e17;
+}
+
+.services .icon-box p {
+  line-height: 24px;
+  font-size: 16px;
+  margin-bottom: 0;
+  font-family: "Oswald";
+  font-weight: 250;
+}
+
+.services .icon-box:hover {
+  border-color: #fff;
+  box-shadow: 0px 0 25px 0 rgba(255, 255, 255, 0.555);
+  transform: translateY(-10px);
+}
+
+.services .section-title {
+  margin-bottom: 0px;
+}
+
+/*--------------------------------------------------------------
+# (appointment) APPOINTMENT HEADER
+--------------------------------------------------------------*/
+#appointment-header {
+  padding-top: 8%;
+  width: 100%;
+  min-height: 50vh;
+  max-height: 70vh;
+  background: url("image/bg.png") top center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: flex-end;
+}
+
+#appointment-header .container {
+  height: 100%;
+}
+
+#appointment-header .row {
+  height: 100%;
+}
+
+#appointment-header .image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+}
+
+#appointment-header .image-wrapper img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+#appointment-header:before {
+  content: "";
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.027) 0%, rgba(0, 0, 0, 0.925) 100%);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+@media (min-width: 1024px) {
+  #appointment-header {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 1024px) {
+  #appointment-header {
+    padding-top: 20%;
+    background-position: center center;
+  }
+
+  #appointment-header img {
+    width: 100%; /* Ensure image scales properly */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+
+/*--------------------------------------------------------------
+# (appointment) APPOINTMENT FORM
+--------------------------------------------------------------*/
+#appointment .container {
+  position: relative;
+}
+
+.appointment .container img{
+  margin-bottom: 30px;
+}
+
+.appointment .php-email-form {
+  width: 100%;
+  border-top: 1px solid #da1e17;
+  border-bottom: 1px solid #da1e17;
+  padding: 30px;
+  background: #000000;
+  font-size: 20px;
+  box-shadow: 0px 0px 10px #da1e17;
+}
+
+.appointment .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.appointment .php-email-form input,
+.appointment .php-email-form textarea {
+  background-color: #000000;
+  border-color: #363535;
+  color: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 18px;
+  font-family: "Oswald";
+  border-radius: 4px;
+}
+
+.appointment .php-email-form input:focus,
+.appointment .php-email-form textarea:focus {
+  border-color: #da1e17;
+}
+
+.appointment .php-email-form input {
+  height: 44px;
+}
+
+.appointment .php-email-form textarea {
+  padding: 10px 12px;
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.custom-select {
+  background-color: black;
+  color: #ffffff;
+  border: 1px solid #363535;
+}
+
+.custom-select option {
+  background-color: black;
+  color: #ffffff;
+  font-family: "Oswald";
+}
+
+.custom-select option:focus {
+  background-color: #ffffff;
+  color: #da1e17;
+}
+
+.custom-select:focus {
+  color: #ffffff;
+  background-color: black;
+  border-color: #da1e17;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 2px;
+  opacity: 0.6;
+  filter: invert(1);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 2px;
+  opacity: 0.6;
+  filter: invert(1);
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1
+}
+
+/*--------------------------------------------------------------
+# (appointment) VISIT US
+--------------------------------------------------------------*/
+.visit-us-ap {
+  margin: 120px 0 90px;
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  padding: 25px 10px 40px;
+}
+
+@media (min-width: 1024px) {
+  .visit-us-ap {
+    background-attachment: fixed;
+  }
+}
+
+.visit-us-ap .section-title h2{
+  margin: 0 0 30px 0;
+  font-size: 80px;
+  text-shadow: 0 0 10px #00000071;
+}
+
+.visit-us-ap .info {
+  width: 100%;
+}
+
+.visit-us-ap .info h4 {
+  padding: 0 0 0 70px;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+.visit-us-ap .info i {
+  font-size: 20px;
+  background: #da1e17;
+  color: #ffffff;
+  float: left;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.visit-us-ap .info i:hover {
+  background: #ffffff;
+  color: #da1e17;;
+}
+
+.visit-us-ap .info p {
+  padding: 0 0 0 70px;
+  margin-bottom: 0;
+  font-size: 15px;
+  color: #ffffff;
+  font-family: "Oswald";
+}
+
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# (login) LOGIN HEADER
+--------------------------------------------------------------*/
+#login-header {
+  padding-top: 10%;
+  width: 100%;
+  min-height: 50vh;
+  max-height: 70vh;
+  background: url("image/bg.png") top center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: flex-end;
+}
+
+#login-header .container {
+  height: 100%;
+}
+
+#login-header .row {
+  height: 100%;
+}
+
+#login-header .image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+}
+
+#login-header .image-wrapper img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+#login-header:before {
+  content: "";
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.027) 0%, rgba(0, 0, 0, 0.925) 100%);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+@media (min-width: 1024px) {
+  #login-header {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 1024px) {
+  #login-header {
+    padding-top: 20%;
+    background-position: center center;
+  }
+
+  #login-header img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/*--------------------------------------------------------------
+# (login) LOGIN FORM
+--------------------------------------------------------------*/
+.login {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 120px;;
+}
+
+.login .php-email-form {
+  margin-top: 13%;
+  width: 100%;
+  border-top: 1px solid #da1e17;
+  border-bottom: 1px solid #da1e17;
+  padding: 50px;
+  background: #000000;
+  font-size: 20px;
+  box-shadow: 0px 0px 10px #da1e17;
+}
+
+.login .php-email-form .form-label {
+  letter-spacing: 2px;
+}
+
+.link-secondary {
+  font-family: "Oswald";
+  color: #fff;
+  font-size: 18px;
+}
+
+.link-secondary:hover {
+  color: #da1e17;
+}
+
+.login .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.login .php-email-form input,
+.login .php-email-form textarea {
+  background-color: #000000;
+  border-color: #363535;
+  color: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 18px;
+  font-family: "Oswald";
+  border-radius: 4px;
+}
+
+.login .php-email-form input:focus,
+.login .php-email-form textarea:focus {
+  border-color: #da1e17;
+}
+
+.login .php-email-form input {
+  height: 45px;
+}
+
+/*--------------------------------------------------------------
+# (registration) SIGNUP HEADER
+--------------------------------------------------------------*/
+#signup-header {
+  padding-top: 10%;
+  width: 100%;
+  min-height: 50vh;
+  max-height: 70vh;
+  background: url("image/bg.png") top center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: flex-end;
+}
+
+#signup-header .container {
+  height: 100%;
+}
+
+#signup-header .row {
+  height: 100%;
+}
+
+#signup-header .image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+}
+
+#signup-header .image-wrapper img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+#signup-header:before {
+  content: "";
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.027) 0%, rgba(0, 0, 0, 0.925) 100%);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+@media (min-width: 1024px) {
+  #signup-header {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 1024px) {
+  #signup-header {
+    padding-top: 20%;
+    background-position: center center;
+  }
+
+  #signup-header img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/*--------------------------------------------------------------
+# (registration) SIGNUP FORM
+--------------------------------------------------------------*/
+.signup {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 120px;;
+}
+
+.signup .php-email-form {
+  margin-top: 10%;
+  width: 100%;
+  border-top: 1px solid #da1e17;
+  border-bottom: 1px solid #da1e17;
+  padding: 50px;
+  background: #000000;
+  font-size: 20px;
+  box-shadow: 0px 0px 10px #da1e17;
+}
+
+.signup .php-email-form .form-label {
+  letter-spacing: 2px;
+}
+
+.link-secondary {
+  font-family: "Oswald";
+  color: #fff;
+  font-size: 18px;
+}
+
+.link-secondary:hover {
+  color: #da1e17;
+}
+
+.signup .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.signup .php-email-form input,
+.signup .php-email-form textarea {
+  background-color: #000000;
+  border-color: #363535;
+  color: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 18px;
+  font-family: "Oswald";
+  border-radius: 4px;
+}
+
+.signup .php-email-form input:focus,
+.signup .php-email-form textarea:focus {
+  border-color: #da1e17;
+}
+
+.login .php-email-form input {
+  height: 45px;
+}
+
+/*--------------------------------------------------------------
+# (profile) PROFILE HEADER
+--------------------------------------------------------------*/
+#profile-header {
+  padding-top: 10%;
+  width: 100%;
+  min-height: 50vh;
+  max-height: 70vh;
+  background: url("image/bg.png") top center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: flex-end;
+}
+
+#profile-header .container {
+  height: 100%;
+}
+
+#profile-header .row {
+  height: 100%;
+}
+
+#profile-header .image-wrapper {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+#profile-header:before {
+  content: "";
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.027) 0%, rgba(0, 0, 0, 0.925) 100%);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#profile-header .welcome-back {
+  justify-content: left;
+  margin: 0%;
+  padding: 0;
+}
+
+@media (min-width: 1024px) {
+  #profile-header {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 1024px) {
+  #profile-header {
+    padding-top: 20%;
+    background-position: center center;
+  }
+
+  #profile-header img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+#profile-header .avatar {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  justify-content: center;
+}
+
+#profile-header.image-wrapper img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;;
+  border-radius: 50%;
+}
+
+@media (max-width: 1200px) {
+  #profile-header .image-wrapper .avatar{
+    max-height: 230px;
+    max-width: 230px;
+  }
+}
+
+@media (max-width: 992px) {
+  #profile-header .image-wrapper .avatar{
+    max-height: 150px;
+    max-width: 190px;
+  }
+}
+
+@media (max-width: 757px) {
+  #profile-header .image-wrapper .avatar{
+    max-height: 150px;
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 699px) {
+  #profile-header .image-wrapper .avatar{
+    max-height: 150px;
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  #profile-header .image-wrapper .avatar {
+    max-height: 130px;
+    max-width: 130px;
+    justify-content: center;
+  }
+
+  #profile-header .row {
+    justify-content: center;
+  }
+
+  #profile-header .col-sm-12 {
+    justify-content: center;
+    display: flex;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# (profile) PROFILE SIDENAV
+--------------------------------------------------------------*/
+.profile-sidenav {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 120px;
+  margin-top: 3%;
+}
+
+.profile-sidenav .container {
+  width: 100%;
+}
+
+.profile-sidenav .profile-controls {
+  width: 100%;
+  border-top: 1px solid #da1e17;
+  border-bottom: 1px solid #da1e17;
+  padding: 20px;
+  background: #000000;
+  font-size: 20px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 10px #da1e17;
+}
+
+.sidenav, .sidenav2 {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navlink, .navlink2 {
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.navlink a, .navlink2 a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navlink:hover, .navlink2:hover,
+.navlink a:hover, .navlink2 a:hover   {
+  color: #da1e17;
+}
+
+.profile-sidenav .profile-details {
+  width: 100%;
+  border-top: 1px solid #da1e17;
+  border-bottom: 1px solid #da1e17;
+  padding: 30px;
+  background: #000000;
+  font-size: 19px;
+  box-shadow: 0px 0px 10px #da1e17;
+  box-sizing: border-box;
+  font-family: "Oswald";
+}
+
+.alignMe {
+  list-style-type: none;
+}
+
+.alignMe li {
+  list-style-type: none;
+}
+
+/* CSS for responsive button */
+#btn-profile {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  #btn-profile {
+      width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
+# (profile) PROFILE MESSAGE
+--------------------------------------------------------------*/
+
+#profile-message {
+  padding: 10px 0px 0px;
+  background: linear-gradient(-45deg, #da1e17, #970429, #f3621e, #da1e17);
+  animation: gradient 15s ease infinite;
+  letter-spacing: 3px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#profile-message h2{
+  font-size: 25px;
+}
+
+/*--------------------------------------------------------------
+# (manage user) MANAGE HEADER
+--------------------------------------------------------------*/
+#manage-header {
+  padding-top: 8%;
+  width: 100%;
+  min-height: 50vh;
+  max-height: 70vh;
+  background-color: #da1e17;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  position: relative;
+  z-index: 1;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: flex-end;
+}
+
+#manage-header .container {
+  height: 100%;
+}
+
+#manage-header .row {
+  height: 100%;
+}
+
+@media (min-width: 1024px) {
+  #manage-header {
+    background-attachment: fixed;
+  }
+}
+
+#manage-header h1 {
+  font-size: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-shadow: 0 0 10px #000000bb;
+}
+
+@media (max-width: 476px) {
+  #manage-header h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 739px) {
+  #manage-header h1 {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 980px) {
+  #manage-header h1 {
+    font-size: 90px;
+  }
+}
+
+.manage-header h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/*--------------------------------------------------------------
+# (manage user) MANAGE DISPLAY TABLE
+--------------------------------------------------------------*/
+.search-bar {
+  padding-top: 2%;
+  max-width: 90%;
+  margin-inline: auto;
+}
+
+.display-user-details {
+  color: white;
+  margin-top: 5px;
+  padding: 0;
+  font-size: 18px;
+  border: 1px solid #da1e17;
+  border-radius: 5px;
+  font-family: "Oswald";
+  background-color: #1b1b1b; 
+}
+
+#userTable {
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse;
+  font-family: "Oswald";
+}
+
+#userTable th,
+#userTable td {
+  padding: 10px;
+  border: 1px solid #ffffff;
+  text-align: center;
+}
+
+#userTable th {
+  background-color: #000000;
+  color: white;
+}
+
+#userTable td {
+  background-color: #1b1b1b;
+  color: white;
+}
+
+@media (max-width: 1200px) {
+  #userTable th, #userTable td {
+      font-size: 18px;
+  }
+}
+
+@media (max-width: 992px) {
+  #userTable th, #userTable td {
+      font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  #userTable th, #userTable td {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  #userTable th, #userTable td {
+      font-size: 12px;
+      padding: 5px;
+  }
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-form input[type="text"] {
+  height: 40px;
+  width: 100%;
+}
+
+.search-form input[type="button"] {
+  height: 30px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.display-user-details ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.display-user-details ul li {
+  margin: 5px 0;
+}
+
+.btn-delete {
+  margin: 0;
+  color: whitesmoke;
+  background-color: #da1e17;
+  padding: 5px 10px 5px 10px;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+.btn-delete:hover {
+  background-color: whitesmoke;
+  color: #da1e17;
+  box-shadow: none;
+}
+
+.btn-edit {
+  margin: 0;
+  color: #da1e17;
+  background-color: whitesmoke;
+  padding: 5px 10px 5px 10px;
+  font-size: 15px;
+  letter-spacing: 0;
+  border-color: #ffffff;
+}
+
+.btn-edit:hover {
+  background-color: #da1e17;
+  color: whitesmoke;
+  border-color: #da1e17;
+}
+
+.btn-back {
+  margin: 0;
+  color: #ffffff;
+  background-color: #363535;
+  padding: 10px 20px 10px 20px;
+  font-size: 20px;
+  letter-spacing: 0;
+  border-color: #ffffff;
+}
+
+.btn-back:hover {
+  background-color: #1b1b1b;
+  color: whitesmoke;
+}
+
+.search-btn {
+  padding: 10px 20px 30px 20px;
+}
+
+/*--------------------------------------------------------------
+# (services & gallery) TATTOO HEADER
+--------------------------------------------------------------*/
+#tattoo-header {
+  padding-top: 10%;
+  width: 100%;
+  min-height: 60vh;
+  max-height: 70vh;
+  background: url("image/bg.png") top center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: flex-end;
+}
+
+#tattoo-header .container {
+  height: 100%;
+}
+
+#tattoo-header .row {
+  height: 100%;
+}
+
+#tattoo-header .image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+}
+
+#tattoo-header .image-wrapper img {
+  max-height: 100%;
+  object-fit: contain;
+}
+
+#tattoo-header:before {
+  content: "";
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.027) 0%, rgba(0, 0, 0, 0.925) 100%);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+@media (min-width: 1024px) {
+  #tattoo-header {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 1024px) {
+  #tattoo-header {
+    padding-top: 20%;
+    background-position: center center;
+  }
+
+  #tattoo-header img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/*--------------------------------------------------------------
+# (services & gallery) TATTOO CONTENT
+--------------------------------------------------------------*/
+.tattoo {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 120px;;
+}
+
+.tattoo p {
+  width: 100%;
+  border-top: 1px solid #da1e17;
+  border-bottom: 1px solid #da1e17;
+  height: 100%;
+  padding: 20px 30px 10px;
+  background: #000000;
+  font-size: 20px;
+  box-shadow: 0px 0px 10px #da1e17;
+  font-family: "Oswald";
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+
+.tattoo #service-section {
+  padding: 0;
+}
+
+.tattoo .btn-container {
+  width: 100%;
+  border-top: 1px solid #b8b8b8;
+  border-bottom: 1px solid #b8b8b8;
+  padding: 30px;
+  background: #000000;
+  font-family: "Bebas Neue";
+}
+
+.tattoo .btn-container button {
+  margin: 0;
+  width: 100%;
+}
+
+.btn-container h3 {
+  font-size: 22px;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-text {
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+# (services & gallery) TATTOO GALLERY
+--------------------------------------------------------------*/
+.tattoo-title {
+  width: 100%;
+  height:100%;
+  margin: 0px 0 90px;
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  padding: 25px 10px 25px;
+}
+
+.tattoo-title .section-title h2{
+  margin: 0 0 0 0;
+  font-size: 60px;
+  text-shadow: 0 0 10px #00000071;
+}
+
+@media (min-width: 1024px) {
+  .tattoo-title {
+    background-attachment: fixed;
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted to ensure three images per row */
+  gap: 10px;
+}
+
+.gallery-item {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 100%;
+}
+
+.gallery-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+  .gallery-item {
+      flex-basis: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery-item {
+      flex-basis: 100%;
+  }
+}
